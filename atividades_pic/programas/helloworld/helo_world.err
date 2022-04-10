@@ -1,0 +1,2 @@
+Warning[2068] D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\helloworld\helo_world.c 26 : obsolete use of implicit 'int' detected
+Warning[2103] D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\helloworld\helo_world.c 26 : default startup code expects main function declared as 'void main (void)'
