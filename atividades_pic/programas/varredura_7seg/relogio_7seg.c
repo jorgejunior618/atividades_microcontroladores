@@ -6,13 +6,13 @@
 
 #define SAIDA 0
 #define ENTRADA 1
-#define BotaoModo PORTAbits.RA0
-#define AjusteHora PORTAbits.RA1
-#define AjusteMinuto PORTAbits.RA2
+#define BotaoModo PORTDbits.RD0
+#define AjusteHora PORTDbits.RD1
+#define AjusteMinuto PORTDbits.RD2
 
 #define BuzzerAlarme LATDbits.LATD4
 #define SAIDA_DISPLAY LATC
-#define SAIDA_VARREDURA LATD
+#define SAIDA_VARREDURA LATA
 
 unsigned char hora, minuto, segundo, horaUltimoAlarme;
 unsigned char numeros_display[10] = {
@@ -29,8 +29,11 @@ unsigned char numeros_display[10] = {
 };
 
 void inicializarAmbiente(void) {
-	TRISC =   0b10000000;
-	TRISD =   0b00000011;
+	TRISC =	0b10000000;
+	TRISA =	0b11000000;
+	TRISDbits.RD0 =	ENTRADA;
+	TRISDbits.RD1 =	ENTRADA;
+	TRISDbits.RD2 =	ENTRADA;
 
 	OSCCON =  0b01000100; // Configura a frequência do oscilador interno para 1MHz
 }
@@ -42,7 +45,7 @@ void inicializarRelogio(void) {
 	horaUltimoAlarme = 0;
 
 	SAIDA_DISPLAY = numeros_display[0];
-	SAIDA_VARREDURA = 0b11111100;
+	SAIDA_VARREDURA = 0b00111111;
 	BuzzerAlarme = 1;
 }
 
@@ -67,12 +70,12 @@ void atualizaRelogio(void) {
 	}
 }
 
-void realizarVarredura(void) {
+void realizaUmaVarredura(void) {
 	// Configura o display com o ultimo valor do horario atualizado
 	// Realizando a varredura nos Seis displays
 
-  unsigned int i, j;
-	unsigned char byteVarredura;
+  unsigned int i;
+	unsigned char byteVarredura = 0b00100000;
 	unsigned char unidadesTempo[6] = {
     segundo - ((segundo / 10) * 10),
     segundo / 10,
@@ -81,17 +84,23 @@ void realizarVarredura(void) {
     hora - ((hora / 10) * 10),
     hora / 10,
   };
+	
+	for (i = 0; i < 6; i++) {
+		SAIDA_VARREDURA = 0b00000000;
+		SAIDA_DISPLAY = numeros_display[unidadesTempo[i]];
+		SAIDA_VARREDURA = byteVarredura;
+		byteVarredura = byteVarredura>>1;
+	}
 
+}
 
-  for (i = 0; i < 742; i++) { // Numero de repeticoes para completar Um segundo
-    byteVarredura = 0b10000000;
-    for (j = 0; j < 6; j++) {
-      SAIDA_VARREDURA = 0b00000000;
-      SAIDA_DISPLAY = numeros_display[unidadesTempo[j]];
-      SAIDA_VARREDURA = byteVarredura;
-      byteVarredura = byteVarredura>>1;
-    }
+void mostrarRelogioVarredura(void) {
+	// Configura o display com o ultimo valor do horario atualizado
+	// Realizando a varredura nos Seis displays
 
+  unsigned int i;
+  for (i = 0; i < 286; i++) { // Numero de repeticoes para completar Um segundo
+    realizaUmaVarredura();
   }
 }
 
@@ -107,7 +116,7 @@ void incrementaRelogioHora(void) {
 }
 
 void incrementaRelogioMinuto(void) {
-	// Incrementa em 1 (um) o valor da vari�vel do minuto,
+	// Incrementa em 1 (um) o valor da variavel do minuto,
 	// e atualiza o display com o novo valor
 
   minuto += 1;
@@ -128,25 +137,31 @@ void editaRelogio(void) {
 	// com o Botao de modo pressionado
 	while(BotaoModo == 1) {}
 
-	while(1){
+	while(1) {
+		realizaUmaVarredura();
+
 		if(BotaoModo == 1){break;}
 		if(AjusteHora == 1) {
 			incrementaRelogioHora();
-			delay_millis(400);
+			while (AjusteHora == 1) {
+				realizaUmaVarredura();
+			}
 		}
 		if(AjusteMinuto == 1) {
 			incrementaRelogioMinuto();
-			delay_millis(400);
+			while (AjusteMinuto == 1) {
+				realizaUmaVarredura();
+			}
 		}
 	}
 }
 
 unsigned char verificaModoEdicao(void) {
 	// Verifica se o botao de modo de edicao foi pressionado
-	// E inicia a contagem at� se passarem 2 segundos, ou
-	// at� o bot�o deixar de ser pressionado
+	// E inicia a contagem ate se passarem 2 segundos, ou
+	// ate o botao deixar de ser pressionado
 
-	unsigned int i, modoEdicao;
+	unsigned int i;
 	unsigned int cont = 0;
 
 	if (BotaoModo == 1) {
@@ -159,9 +174,8 @@ unsigned char verificaModoEdicao(void) {
 			};
 			cont++;
 		}
-		modoEdicao = cont;
 	}
-	if (modoEdicao == 2) {
+	if (cont == 2) {
 		return 1;
 	}
 	return 0;
@@ -184,17 +198,26 @@ void main(void) {
 
 	while (1) {
 		// Sincroniza a hora do alarme apos o delay e incremento de tempo
-		// horaUltimoAlarme = hora;
+		horaUltimoAlarme = hora;
 
-		// if (verificaModoEdicao() == 1) {
-		// 	editaRelogio();
-		// }
-
-		// delay_secs(1);
-
+		mostrarRelogioVarredura();
 		atualizaRelogio();
-		realizarVarredura();
 
-		// verificarAlarme();
+		if (PORTBbits.RB0 == 1) {
+			atualizaRelogio();
+			atualizaRelogio();
+			atualizaRelogio();
+			atualizaRelogio();
+			atualizaRelogio();
+			atualizaRelogio();
+			atualizaRelogio();
+
+		}
+
+		if (verificaModoEdicao() == 1) {
+			editaRelogio();
+		}
+
+		verificarAlarme();
 	}
 }
