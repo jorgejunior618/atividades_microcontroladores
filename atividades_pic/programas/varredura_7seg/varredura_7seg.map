@@ -1,26 +1,26 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Wed May 04 20:00:45 2022
+Linker Map File - Created Thu May 05 11:00:01 2022
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
                 ---------  ---------  ---------  ---------  ---------
                _entry_scn       code   0x000000    program   0x000006
                    .cinit    romdata   0x000006    program   0x00000e
-     .code_relogio_7seg.o       code   0x000014    program   0x0006b8
-               _cinit_scn       code   0x0006cc    program   0x00009e
-                    .code       code   0x00076a    program   0x000020
-             _startup_scn       code   0x00078a    program   0x00001c
-         .code_fxd0808u.o       code   0x0007a6    program   0x00001c
-           .code___init.o       code   0x0007c2    program   0x000002
-         .romdata_c018i.o    romdata   0x0007c4    program   0x000000
-  .idata_relogio_7seg.o_i    romdata   0x0007c4    program   0x000016
-  .romdata_relogio_7seg.o    romdata   0x0007c4    program   0x000000
-        .romdata___init.o    romdata   0x0007c4    program   0x000000
-      .romdata_fxd0808u.o    romdata   0x0007c4    program   0x000000
-        .idata___init.o_i    romdata   0x0007da    program   0x000000
-      .idata_fxd0808u.o_i    romdata   0x0007da    program   0x000000
-            .code_c018i.o       code   0x0007da    program   0x000000
-         .idata_c018i.o_i    romdata   0x0007da    program   0x000000
+     .code_relogio_7seg.o       code   0x000014    program   0x0006c6
+               _cinit_scn       code   0x0006da    program   0x00009e
+                    .code       code   0x000778    program   0x000020
+             _startup_scn       code   0x000798    program   0x00001c
+         .code_fxd0808u.o       code   0x0007b4    program   0x00001c
+           .code___init.o       code   0x0007d0    program   0x000002
+         .romdata_c018i.o    romdata   0x0007d2    program   0x000000
+  .idata_relogio_7seg.o_i    romdata   0x0007d2    program   0x000016
+  .romdata_relogio_7seg.o    romdata   0x0007d2    program   0x000000
+        .romdata___init.o    romdata   0x0007d2    program   0x000000
+      .romdata_fxd0808u.o    romdata   0x0007d2    program   0x000000
+        .idata___init.o_i    romdata   0x0007e8    program   0x000000
+      .idata_fxd0808u.o_i    romdata   0x0007e8    program   0x000000
+            .code_c018i.o       code   0x0007e8    program   0x000000
+         .idata_c018i.o_i    romdata   0x0007e8    program   0x000000
 .config_300001_relogio_7seg.o    romdata   0x300001    program   0x000001
 .config_300003_relogio_7seg.o    romdata   0x300003    program   0x000001
                 MATH_DATA      udata   0x000000       data   0x000010
@@ -41,52 +41,52 @@ Linker Map File - Created Wed May 04 20:00:45 2022
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x0007d9      
+                            0x000000    0x0007e7      
                             0x300001    0x300001      
                             0x300003    0x300003      
-            2012 out of 33048 program addresses used, program memory utilization is 6%
+            2026 out of 33048 program addresses used, program memory utilization is 6%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                 FXD0808U   0x0007a6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd0808u.c
-       ___return_lbl00000   0x0007c0    program     static                          
+                 FXD0808U   0x0007b4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd0808u.c
+       ___return_lbl00000   0x0007ce    program     static                          
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x0007a4    program     static                          
-       ___return_lbl00002   0x000768    program     static                          
+       ___return_lbl00001   0x0007b2    program     static                          
+       ___return_lbl00002   0x000776    program     static                          
                __config_0   0x300001    program     static D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
                __config_1   0x300003    program     static D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-                   __init   0x0007c2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-            __zero_memory   0x00076a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                _do_cinit   0x0006cc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                   __init   0x0007d0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
+            __zero_memory   0x000778    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                _do_cinit   0x0006da    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 _startup   0x00078a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-          atualizaRelogio   0x00034e    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-                compare_l   0x000780    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                copy_loop   0x00073e    program     static                          
-            copy_one_byte   0x000744    program     static                          
+                 _startup   0x000798    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+          atualizaRelogio   0x000356    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
+                compare_l   0x00078e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                copy_loop   0x00074c    program     static                          
+            copy_one_byte   0x000752    program     static                          
              delay_millis   0x00008a    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\timer.h
                delay_secs   0x000014    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\timer.h
-                     done   0x000768    program     static                          
-             done_copying   0x000752    program     static                          
-             editaRelogio   0x00047a    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-                  endloop   0x0007bc    program     static                          
+                     done   0x000776    program     static                          
+             done_copying   0x000760    program     static                          
+             editaRelogio   0x000466    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
+                  endloop   0x0007ca    program     static                          
       inicializarAmbiente   0x000100    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-       inicializarRelogio   0x000120    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-               lerTeclado   0x000370    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-                     loop   0x0007ae    program     static                          
-                     loop   0x00079a    program     static                          
-                   loop_h   0x000778    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_l   0x000782    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                     main   0x0006a6    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-  mostrarRelogioVarredura   0x000308    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-      realizaUmaVarredura   0x000142    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-                     test   0x0006e6    program     static                          
-       verificaModoEdicao   0x0005d6    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-          verificarAlarme   0x000678    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-               zero_block   0x000778    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+       inicializarRelogio   0x000124    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
+               lerTeclado   0x000378    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
+                     loop   0x0007bc    program     static                          
+                     loop   0x0007a8    program     static                          
+                   loop_h   0x000786    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_l   0x000790    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                     main   0x0006b4    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
+mostrarRelogioVarredura1sec   0x000310    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
+      realizaUmaVarredura   0x00014a    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
+                     test   0x0006f4    program     static                          
+       verificaModoEdicao   0x0005e4    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
+          verificarAlarme   0x000686    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
+               zero_block   0x000786    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
@@ -321,35 +321,35 @@ Linker Map File - Created Wed May 04 20:00:45 2022
                delay_secs   0x000014    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\timer.h
              delay_millis   0x00008a    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\timer.h
       inicializarAmbiente   0x000100    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-       inicializarRelogio   0x000120    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-      realizaUmaVarredura   0x000142    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-  mostrarRelogioVarredura   0x000308    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-          atualizaRelogio   0x00034e    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-               lerTeclado   0x000370    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-             editaRelogio   0x00047a    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-       verificaModoEdicao   0x0005d6    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-          verificarAlarme   0x000678    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-                     main   0x0006a6    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
-                _do_cinit   0x0006cc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x0006e6    program     static                          
-                copy_loop   0x00073e    program     static                          
-            copy_one_byte   0x000744    program     static                          
-             done_copying   0x000752    program     static                          
-       ___return_lbl00002   0x000768    program     static                          
-                     done   0x000768    program     static                          
-            __zero_memory   0x00076a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_h   0x000778    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-               zero_block   0x000778    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                compare_l   0x000780    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_l   0x000782    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                 _startup   0x00078a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x00079a    program     static                          
-       ___return_lbl00001   0x0007a4    program     static                          
-                 FXD0808U   0x0007a6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd0808u.c
-                     loop   0x0007ae    program     static                          
-                  endloop   0x0007bc    program     static                          
-       ___return_lbl00000   0x0007c0    program     static                          
-                   __init   0x0007c2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
+       inicializarRelogio   0x000124    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
+      realizaUmaVarredura   0x00014a    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
+mostrarRelogioVarredura1sec   0x000310    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
+          atualizaRelogio   0x000356    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
+               lerTeclado   0x000378    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
+             editaRelogio   0x000466    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
+       verificaModoEdicao   0x0005e4    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
+          verificarAlarme   0x000686    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
+                     main   0x0006b4    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
+                _do_cinit   0x0006da    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x0006f4    program     static                          
+                copy_loop   0x00074c    program     static                          
+            copy_one_byte   0x000752    program     static                          
+             done_copying   0x000760    program     static                          
+       ___return_lbl00002   0x000776    program     static                          
+                     done   0x000776    program     static                          
+            __zero_memory   0x000778    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_h   0x000786    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+               zero_block   0x000786    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                compare_l   0x00078e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_l   0x000790    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                 _startup   0x000798    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x0007a8    program     static                          
+       ___return_lbl00001   0x0007b2    program     static                          
+                 FXD0808U   0x0007b4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd0808u.c
+                     loop   0x0007bc    program     static                          
+                  endloop   0x0007ca    program     static                          
+       ___return_lbl00000   0x0007ce    program     static                          
+                   __init   0x0007d0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
                __config_0   0x300001    program     static D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
                __config_1   0x300003    program     static D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\atividades_pic\programas\varredura_7seg\relogio_7seg.c
                  __AARGB7   0x000000       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm

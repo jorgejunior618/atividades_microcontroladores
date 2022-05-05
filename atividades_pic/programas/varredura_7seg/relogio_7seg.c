@@ -16,6 +16,8 @@
 #define MatLinD PORTDbits.RD7
 
 #define BuzzerAlarme LATBbits.LATB0
+#define LEDEditaHora LATBbits.LATB1
+#define LEDEditaAlarme LATBbits.LATB2
 
 #define SAIDA_DISPLAY LATC
 #define SAIDA_VARREDURA LATA
@@ -44,6 +46,8 @@ void inicializarAmbiente(void) {
 	TRISC =	0b10000000;
 	TRISA =	0b11000000;
 	TRISBbits.RB0 = SAIDA;
+	TRISBbits.RB1 = SAIDA;
+	TRISBbits.RB2 = SAIDA;
 
 	TRISDbits.RD0 = ENTRADA;
 	TRISDbits.RD1 = SAIDA;
@@ -69,6 +73,8 @@ void inicializarRelogio(void) {
 	MatCol2 = 1;
 	MatCol3 = 1;
 	BuzzerAlarme = 1;
+	LEDEditaHora = 1;
+	LEDEditaAlarme = 1;
 
 	SAIDA_DISPLAY = numeros_display[0];
 	SAIDA_VARREDURA = 0b00111111;
@@ -76,10 +82,10 @@ void inicializarRelogio(void) {
 
 void realizaUmaVarredura(unsigned char mostraAlarme) {
 /** Configura o display com o ultimo valor do horario atualizado
-	* Realizando a varredura nos Seis displays
-	*/
+ * Realizando a varredura nos Seis displays
+ */
 
-  unsigned int i;
+	unsigned int i;
 	unsigned char byteVarredura = 0b00100000;
 	unsigned char unidadesTempo[6] = {
     mostraAlarme ==  1 ? 0 : segundo - ((segundo / 10) * 10),
@@ -98,20 +104,20 @@ void realizaUmaVarredura(unsigned char mostraAlarme) {
 	}
 }
 
-void mostrarRelogioVarredura(void) {
+void mostrarRelogioVarredura1sec(void) {
 	// Configura o display com o ultimo valor do horario atualizado
 	// Realizando a varredura nos Seis displays
 
   unsigned int i;
-  for (i = 0; i < 286; i++) { // Numero de repeticoes para completar Um segundo
+  for (i = 0; i < 277; i++) { // Numero de repeticoes para completar Um segundo
     realizaUmaVarredura(0);
   }
 }
 
 void atualizaRelogio(void) {
 /** Incrementa as variaveis do relogio em 1 (Um)
-	* seguindo as regras do formato hh:mm:ss
-	*/
+ * seguindo as regras do formato hh:mm:ss
+ */
 
   segundo += 1;
 
@@ -160,45 +166,41 @@ unsigned char lerTeclado(void) {
 				MatCol3 = 1;
 				break;
 		}
-		if (i > 4) {}
+		if (i > 3) {}
 		else if(MatLinA == 0) {
 			while (MatLinA == 0) {}
-			valorTeclado = matriz_numeros_teclado[0][i];
-			break;
+			return matriz_numeros_teclado[0][i];
 		}
 		else if(MatLinB == 0) {
 			while (MatLinB == 0) {}
-			valorTeclado = matriz_numeros_teclado[1][i];
-			break;
+			return matriz_numeros_teclado[1][i];
 		}
 		else if(MatLinC == 0) {
 			while (MatLinC == 0) {}
-			valorTeclado = matriz_numeros_teclado[2][i];
-			break;
+			return matriz_numeros_teclado[2][i];
 		}
 		else if(MatLinD == 0) {
 			while (MatLinD == 0) {}
-			valorTeclado = matriz_numeros_teclado[3][i];
-			break;
+			return matriz_numeros_teclado[3][i];
 		}
 	}
-	if (valorTeclado != 200) {
-		return valorTeclado;
-	}
-	return 200;
+	return valorTeclado;
 }
 
 void editaRelogio(void) {
 /** Entra no modo de edicao do Relogio, iniciando pela edicao dos minutos.
-	*	Inicia a leitura da dezena do minuto, logo apos a unidade, e passa para as horas
-	*	Edicao das horas idem
-	*	Ao Botao de modo ser apertado:
-	*		Se estiver editando os minutos, a edicao passa para as horas
-	*		Se estiver editando as horas, finaliza o modo de edicao
-	*	Ao finalizar a leitura da dezena e unidade das horas, finaliza a edicao
-	*/
+ *	Inicia a leitura da dezena do minuto, logo apos a unidade, e passa para as horas
+ *	Edicao das horas idem
+ *	Ao Botao de modo ser apertado:
+ *		Se estiver editando os minutos, a edicao passa para as horas
+ *		Se estiver editando as horas, finaliza o modo de edicao
+ *	Ao finalizar a leitura da dezena e unidade das horas, finaliza a edicao
+ */
 
 	unsigned char aux, ultimaLeitura = 0;
+
+	LEDEditaHora = 0;
+	LEDEditaAlarme = 1;
 
 // Previne o fim da funcao ao entrar no modo de edicao com o Botao de modo pressionado
 	while(BotaoModo == 1) {}
@@ -210,7 +212,11 @@ void editaRelogio(void) {
 			realizaUmaVarredura(0);
 		}
 
-		if (ultimaLeitura > 7) {break;}
+		if (ultimaLeitura > 7) {
+			LEDEditaHora = 1;
+			LEDEditaAlarme = 1;
+			break;
+		}
 
 		if (BotaoModo == 1) {
 			while (BotaoModo == 1) {}
@@ -221,8 +227,15 @@ void editaRelogio(void) {
 			} else if (ultimaLeitura < 6) {
 				ultimaLeitura = 6;
 			} else if (ultimaLeitura > 5) {
+				LEDEditaHora = 1;
+				LEDEditaAlarme = 1;
 				break;
 			}
+		}
+
+		if (ultimaLeitura > 3) {
+			LEDEditaHora = 1;
+			LEDEditaAlarme = 0;
 		}
 		
 		aux = lerTeclado();
@@ -265,9 +278,9 @@ void editaRelogio(void) {
 
 unsigned char verificaModoEdicao(void) {
 /** Verifica se o botao de modo de edicao foi pressionado
-	* E inicia a contagem ate se passarem 2 segundos, ou
-	* ate o botao deixar de ser pressionado
-	*/
+ * E inicia a contagem ate se passarem 2 segundos, ou
+ * ate o botao deixar de ser pressionado
+ */
 
 	unsigned int i;
 	unsigned int cont = 0;
@@ -312,7 +325,7 @@ void main(void) {
 	inicializarRelogio();
 
 	while (1) {
-		mostrarRelogioVarredura();
+		mostrarRelogioVarredura1sec();
 		atualizaRelogio();
 
 		if (BotaoModo == 1 && alarmando == 1) {
