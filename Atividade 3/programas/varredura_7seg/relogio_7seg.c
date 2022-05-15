@@ -35,12 +35,6 @@ unsigned char numeros_display[10] = {
   0b00000000,
   0b00000100,
 };
-unsigned char matriz_numeros_teclado[4][3] = {
-	{1,		2,	3	},
-	{4,		5,	6	},
-	{7,		8,	9	},
-	{200,	0,	200	},
-};
 
 void inicializarAmbiente(void) {
 	TRISC =	0b10000000;
@@ -140,6 +134,13 @@ unsigned char lerTeclado(void) {
 	// Varre o teclado numerico e retorna o valor correspondente a tecla clicada
 
 	unsigned char valorTeclado = 200, i;
+	unsigned char matriz_numeros_teclado[4][3] = {
+		{1,		2,	3	},
+		{4,		5,	6	},
+		{7,		8,	9	},
+		{200,	0,	200	},
+	};
+	
 	for (i = 0; i < 4; i++) {
 		switch (i) {
 			case 0:
