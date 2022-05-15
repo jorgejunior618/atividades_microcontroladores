@@ -23,6 +23,7 @@ void inicializarAmbiente(void) {
 }
 
 void delayMs(int delay) {
+  // Realiza a espera do valor informado no parametro [delay] em milisegundos
   int i, j;
   for (i = 0; i < delay; i++){
     for (j = 0; j < 10; j++) {}
@@ -30,17 +31,20 @@ void delayMs(int delay) {
 }
 
 void delayInicialLCD(void) {
+  // Delay para garantir a inicialização correta do LCD (aprox. 100ms)
   int i;
   for (i = 0; i < 1380; i++) {}
 }
 
 void pulsoEnable(void) {
+  // Realiza um pulso no Enable do LCD para receber a informação no barramento de dados
   ENABLE = 1;
   ENABLE = 0;
   delayMs(1);
 }
 
 void enviarComandoLCD(unsigned char comando) {
+  // Envia o comando informado como instrução para o LCD
   RS = BITInstrucao;
   DISPLAY = comando;
   
@@ -48,6 +52,7 @@ void enviarComandoLCD(unsigned char comando) {
 }
 
 void enviarDadoLCD(unsigned char dado) {
+  // Envia o comando informada como dado para o LCD
   RS = BITDado;
   DISPLAY = dado;
   
@@ -55,13 +60,9 @@ void enviarDadoLCD(unsigned char dado) {
 }
 
 void limpaDisplay(void) {
-  RS = BITInstrucao;
-
-  DISPLAY = 0b00000000;
-  pulsoEnable();
-  DISPLAY = 0b00000001;
-  pulsoEnable();
-  delayMs(2);
+  // Limpa todos os caracteres que estejam no display
+  enviarComandoLCD(0b00000000);
+  enviarComandoLCD(0b00000001);
 }
 
 void inicializarLCD(void) {
@@ -89,6 +90,7 @@ void inicializarLCD(void) {
 }
 
 void exibirNome(void) {
+  // Itera sobre o array de Caracteres definido para o nome a ser mostrado
   unsigned char i;
 
   for (i = 0; i < 12; i++) {

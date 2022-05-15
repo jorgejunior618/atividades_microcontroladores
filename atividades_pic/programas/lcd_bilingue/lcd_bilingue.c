@@ -29,6 +29,7 @@ void inicializarAmbiente(void) {
 }
 
 void delayMs(int delay) {
+  // Realiza a espera do valor informado no parametro [delay] em milisegundos
   int i, j;
   for (i = 0; i < delay; i++){
     for (j = 0; j < 10; j++) {}
@@ -36,21 +37,27 @@ void delayMs(int delay) {
 }
 
 void delayInicialLCD(void) {
+  // Delay para garantir a inicialização correta do LCD (aprox. 100ms)
   int i;
   for (i = 0; i < 1380; i++) {}
 }
 
 void clockPortugues(void) {
+  // Realiza um pulso no Enable do LCD Portugues para receber a informação no barramento de dados
   ENABLEPORTUGUES = 1;
   ENABLEPORTUGUES = 0;
 }
 
 void clockIngles(void) {
+  // Realiza um pulso no Enable do LCD Ingles para receber a informação no barramento de dados
   ENABLEINGLES = 1;
   ENABLEINGLES = 0;
 }
 
 void enviarComandoLCD(unsigned char comando, unsigned char portugues, unsigned char ingles) {
+  // Envia o comando informado como instrução para o LCD
+  // Os parametros [portugues] e [ingles] sao utilizados para identificas o(s) LCD(s) a receber o comando
+
   RS = BITInstrucao;
   DISPLAY = comando;
   
@@ -64,6 +71,9 @@ void enviarComandoLCD(unsigned char comando, unsigned char portugues, unsigned c
 }
 
 void enviarDadoLCD(unsigned char dado, unsigned char portugues, unsigned char ingles) {
+  // Envia o comando informado como dado para o LCD
+  // Os parametros [portugues] e [ingles] sao utilizados para identificas o(s) LCD(s) a receber o dado
+
   RS = BITDado;
   DISPLAY = dado;
   
@@ -77,6 +87,7 @@ void enviarDadoLCD(unsigned char dado, unsigned char portugues, unsigned char in
 }
 
 void limpaDisplay(void) {
+  // Limpa todos os caracteres que estejam nos displays
   enviarComandoLCD(0b00000000, 1, 1);
   enviarComandoLCD(0b00000001, 1, 1);
 }
@@ -104,6 +115,7 @@ void inicializarLCD(void) {
 
 
 void exibirPalavras(void) {
+  // Itera sobre os arrays de caracteres para mostra los nos displays
   unsigned char i = 0;
 
   while(i < tamanhoPortugues || i < tamanhoIngles) {

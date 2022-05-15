@@ -10,7 +10,7 @@
 #define BITInstrucao 0
 #define BITDado 1
 
-unsigned char caracteresEspeciais[] = {
+unsigned char caracteresEspeciais[] = { // Desenho da animação
   0b00001100,
   0b00000100,
   0b00001110,
@@ -66,6 +66,7 @@ void inicializarAmbiente(void) {
 }
 
 void delayMs(int delay) {
+  // Realiza a espera do valor informado no parametro [delay] em milisegundos
   int i, j;
   for (i = 0; i < delay; i++){
     for (j = 0; j < 10; j++) {}
@@ -73,17 +74,20 @@ void delayMs(int delay) {
 }
 
 void delayInicialLCD(void) {
+  // Delay para garantir a inicialização correta do LCD (aprox. 100ms)
   int i;
   for (i = 0; i < 1380; i++) {}
 }
 
 void pulsoEnable(void) {
+  // Realiza um pulso no Enable do LCD para receber a informação no barramento de dados
   ENABLE = 1;
   ENABLE = 0;
   delayMs(1);
 }
 
 void enviarComandoLCD(unsigned char comando) {
+  // Envia o comando informada como instrução para o LCD
   RS = BITInstrucao;
   DISPLAY = comando;
   
@@ -91,6 +95,7 @@ void enviarComandoLCD(unsigned char comando) {
 }
 
 void enviarDadoLCD(unsigned char dado) {
+  // Envia o comando informado como dado para o LCD
   RS = BITDado;
   DISPLAY = dado;
   
@@ -98,16 +103,14 @@ void enviarDadoLCD(unsigned char dado) {
 }
 
 void limpaDisplay(void) {
-  RS = BITInstrucao;
-
-  DISPLAY = 0b00000000;
-  pulsoEnable();
-  DISPLAY = 0b00000001;
-  pulsoEnable();
-  delayMs(2);
+  // Limpa todos os caracteres que estejam no display
+  enviarComandoLCD(0b00000000);
+  enviarComandoLCD(0b00000001);
 }
 
 void definirCaracteresEspeciais(void) {
+  // Atribui a personalização para os caracteres especiais da Tabela ASCII
+  // Utilizados para realizar a animacao
   char i;
   enviarComandoLCD(0b00000100);
   enviarComandoLCD(0b00000000);
@@ -150,6 +153,7 @@ void inicializarLCD(void) {
 }
 
 void exibirAnimacao(void) {
+  // Realiza a iteracao com os caracteres especiais para mostrar a animação no LCD
   unsigned char i;
 
   char caracteres[] = {
