@@ -5,83 +5,71 @@
 
 #define DISPLAY LATC
 #define RS LATDbits.LATD0
-#define ENABLEPORTUGUES LATDbits.LATD1
-#define ENABLEINGLES LATDbits.LATD2
+#define ENABLE LATDbits.LATD1
 
 #define BITInstrucao 0
 #define BITDado 1
 
-unsigned char alfabeto[] = {
+unsigned char caracteresEspeciais[] = {
+  0b00001100,
   0b00000100,
-  0b00000001, // A
+  0b00001110,
+  0b00010101,
   0b00000100,
-  0b00000010, // B
-  0b00000100,
-  0b00000011, // C
-  0b00000100,
-  0b00000100, // D
-  0b00000100,
-  0b00000101, // E
-  0b00000100,
-  0b00000110, // F
-  0b00000100,
-  0b00000111, // G
-  0b00000100,
-  0b00001000, // H
-  0b00000100,
-  0b00001001, // I
-  0b00000100,
-  0b00001010, // J
-  0b00000100,
-  0b00001011, // K
-  0b00000100,
-  0b00001100, // L
-  0b00000100,
-  0b00001101, // M
-  0b00000100,
-  0b00001110, // N
-  0b00000100,
-  0b00001111, // O
-  0b00000101,
-  0b00000001, // P
-  0b00000101,
-  0b00000010, // Q
-  0b00000101,
-  0b00000011, // R
-  0b00000101,
-  0b00000100, // S
-  0b00000101,
-  0b00000101, // T
-  0b00000101,
-  0b00000110, // U
-  0b00000101,
-  0b00000111, // V
-  0b00000101,
-  0b00001001, // W
-  0b00000101,
-  0b00001010, // X
-  0b00000101,
-  0b00001011, // Y
-  0b00000101,
-  0b00001100, // Z
-};
+  0b00001010,
+  0b00001010,
+  0b00011011,
 
-unsigned char tamanhoPortugues = 18, tamanhoIngles = 14;
-unsigned char nomePortugues[18];
-unsigned char nomeIngles[14];
+  0b00001100,
+  0b00000100,
+  0b00011111,
+  0b00000100,
+  0b00000100,
+  0b00001010,
+  0b00010001,
+  0b00010001,
+
+  0b00001100,
+  0b00010101,
+  0b00001110,
+  0b00000100,
+  0b00000100,
+  0b00001010,
+  0b00010001,
+  0b00010001,
+
+  0b00001100,
+  0b00000100,
+  0b00011111,
+  0b00000100,
+  0b00000100,
+  0b00001010,
+  0b00010001,
+  0b00010001,
+
+  0b00001100,
+  0b00000100,
+  0b00001110,
+  0b00010101,
+  0b00000100,
+  0b00001010,
+  0b00001010,
+  0b00011011,
+};
 
 void inicializarAmbiente(void) {
 	TRISC =	0b11110000;
 	TRISDbits.RD0 =	0;
 	TRISDbits.RD1 =	0;
-	TRISDbits.RD2 =	0;
 	
 	OSCCON =  0b01000100; // Configura a frequencia do oscilador interno para 1MHz
 }
 
-void delay3ms(void) {
-  int i;
-  for (i = 0; i < 40; i++) {}
+void delayMs(int delay) {
+  int i, j;
+  for (i = 0; i < delay; i++){
+    for (j = 0; j < 10; j++) {}
+  }
 }
 
 void delayInicialLCD(void) {
@@ -89,124 +77,102 @@ void delayInicialLCD(void) {
   for (i = 0; i < 1380; i++) {}
 }
 
-void clockPortugues(void) {
-  ENABLEPORTUGUES = 1;
-  ENABLEPORTUGUES = 0;
+void pulsoEnable(void) {
+  ENABLE = 1;
+  ENABLE = 0;
+  delayMs(1);
 }
 
-void clockIngles(void) {
-  ENABLEINGLES = 1;
-  ENABLEINGLES = 0;
+void enviarComandoLCD(unsigned char comando) {
+  RS = BITInstrucao;
+  DISPLAY = comando;
+  
+  pulsoEnable();
+}
+
+void enviarDadoLCD(unsigned char dado) {
+  RS = BITDado;
+  DISPLAY = dado;
+  
+  pulsoEnable();
 }
 
 void limpaDisplay(void) {
   RS = BITInstrucao;
 
   DISPLAY = 0b00000000;
-  clockPortugues();
-  clockIngles();
+  pulsoEnable();
   DISPLAY = 0b00000001;
-  clockPortugues();
-  clockIngles();
+  pulsoEnable();
+  delayMs(2);
 }
 
-void inicializarLCD(void) {
-  nomePortugues[0] = alfabeto[10];
-  nomePortugues[1] = alfabeto[11];
-  nomePortugues[2] = alfabeto[0];
-  nomePortugues[3] = alfabeto[1];
-  nomePortugues[4] = alfabeto[4];
-  nomePortugues[5] = alfabeto[5];
-  nomePortugues[6] = alfabeto[38];
-  nomePortugues[7] = alfabeto[39];
-  nomePortugues[8] = alfabeto[22];
-  nomePortugues[9] = alfabeto[23];
-  nomePortugues[10] = alfabeto[6];
-  nomePortugues[11] = alfabeto[7];
-  nomePortugues[12] = alfabeto[0];
-  nomePortugues[13] = alfabeto[1];
-  nomePortugues[14] = alfabeto[6];
-  nomePortugues[15] = alfabeto[7];
-  nomePortugues[16] = alfabeto[8];
-  nomePortugues[17] = alfabeto[9];
-  
-  nomeIngles[0] = alfabeto[4];
-  nomeIngles[1] = alfabeto[5];
-  nomeIngles[2] = alfabeto[28];
-  nomeIngles[3] = alfabeto[29];
-  nomeIngles[4] = alfabeto[22];
-  nomeIngles[5] = alfabeto[23];
-  nomeIngles[6] = alfabeto[22];
-  nomeIngles[7] = alfabeto[23];
-  nomeIngles[8] = alfabeto[8];
-  nomeIngles[9] = alfabeto[9];
-  nomeIngles[10] = alfabeto[12];
-  nomeIngles[11] = alfabeto[13];
-  nomeIngles[12] = alfabeto[8];
-  nomeIngles[13] = alfabeto[9];
-	// DISPLAY = 0;
-  delayInicialLCD();
-  // Define modo 4bits, 1 linha, font 5x8
-  RS = BITInstrucao;
-  DISPLAY = 0b00000010;
-  clockPortugues();
-  clockIngles();
-  DISPLAY = 0b00000010;
-  clockPortugues();
-  clockIngles();
-  DISPLAY = 0b00001000;
-  clockPortugues();
-  clockIngles();
-  delay3ms();
+void definirCaracteresEspeciais(void) {
+  char i;
+  enviarComandoLCD(0b00000100);
+  enviarComandoLCD(0b00000000);
 
-  // Define o LCD ligado e cursor
-  DISPLAY = 0b00000000;
-  clockPortugues();
-  clockIngles();
-  DISPLAY = 0b00001110;
-  clockPortugues();
-  clockIngles();
-  delay3ms();
-
-  limpaDisplay();
-  delay3ms();
-
-  // Modo de Entrada
-  DISPLAY = 0b00000000;
-  clockPortugues();
-  clockIngles();
-  DISPLAY = 0b00000110;
-  clockPortugues();
-  clockIngles();
-  delay3ms();
-}
-
-void delayExibicao(void) {
-  int i;
-  for (i = 0; i < 6000; i++) {}
-}
-
-void exibirPalavras(void) {
-  unsigned char i = 0;
-  RS = BITDado;
-
-  while(i < tamanhoPortugues || i < tamanhoIngles) {
-    if (i < tamanhoPortugues){
-      DISPLAY = nomePortugues[i];
-      clockPortugues();
-    }
-    if (i < tamanhoIngles){
-      DISPLAY = nomeIngles[i];
-      clockIngles();
-    }
-    i += 1;
+  for (i= 0; i < 40; i++) {
+    enviarDadoLCD(caracteresEspeciais[i]>>4);
+    enviarDadoLCD(caracteresEspeciais[i]);
   }
 }
 
-void limparPalavras(void) {
-  delayExibicao();
+void cursorPosicaoInicial(void) {
+  enviarComandoLCD(0b00001000);
+  enviarComandoLCD(0b00000000);
+}
+
+void inicializarLCD(void) {
+	// DISPLAY = 0;
+  delayInicialLCD();
+  // Define modo 4bits, 1 linha, font 5x8
+  enviarComandoLCD(0b00000010);
+  enviarComandoLCD(0b00000010);
+  enviarComandoLCD(0b00001000);
+  delayMs(2);
+
+  // Define o LCD ligado e cursor
+  enviarComandoLCD(0b00000000);
+  enviarComandoLCD(0b00001100);
+  delayMs(2);
+
   limpaDisplay();
-  delayExibicao();
+  delayMs(2);
+
+  // Modo de Entrada
+  enviarComandoLCD(0b00000000);
+  enviarComandoLCD(0b00000110);
+  delayMs(2);
+
+  definirCaracteresEspeciais();
+  cursorPosicaoInicial();
+}
+
+void exibirAnimacao(void) {
+  unsigned char i;
+
+  char caracteres[] = {
+    0b00000000,
+    0b00000000,
+    0b00000000,
+    0b00000001,
+    0b00000000,
+    0b00000010,
+    0b00000000,
+    0b00000011,
+    0b00000000,
+    0b00000100,
+  };
+
+  for (i = 0; i < 10; i++) {
+    enviarDadoLCD(caracteres[i]);
+    
+    if (i % 2 == 1) {
+      delayMs(150);
+      cursorPosicaoInicial();
+    }
+  }
 }
 
 void main(void) {
@@ -214,8 +180,6 @@ void main(void) {
   inicializarLCD();
 
   while(1) {
-    exibirPalavras();
-
-    limparPalavras();
+    exibirAnimacao();
   }
 }
