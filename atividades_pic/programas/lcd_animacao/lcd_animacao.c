@@ -10,7 +10,7 @@
 #define BITInstrucao 0
 #define BITDado 1
 
-unsigned char caracteresEspeciais[] = { // Desenho da animação
+unsigned char caracteresEspeciais2[] = { // Desenho da animação
   0b00001100,
   0b00000100,
   0b00001110,
@@ -51,6 +51,44 @@ unsigned char caracteresEspeciais[] = { // Desenho da animação
   0b00000100,
   0b00001110,
   0b00010101,
+  0b00000100,
+  0b00001010,
+  0b00001010,
+  0b00011011,
+};
+
+unsigned char caracteresEspeciais[] = { // Desenho da animação
+  0b00001100,
+  0b00000101,
+  0b00011110,
+  0b00000100,
+  0b00001000,
+  0b00010100,
+  0b00001010,
+  0b00011011,
+  
+  0b00001100,
+  0b00000100,
+  0b00011111,
+  0b00000100,
+  0b00000100,
+  0b00001010,
+  0b00001010,
+  0b00011011,
+
+  0b00001100,
+  0b00010100,
+  0b00001111,
+  0b00000100,
+  0b00000010,
+  0b00000101,
+  0b00001010,
+  0b00011011,
+  
+  0b00001100,
+  0b00000100,
+  0b00011111,
+  0b00000100,
   0b00000100,
   0b00001010,
   0b00001010,
@@ -115,7 +153,7 @@ void definirCaracteresEspeciais(void) {
   enviarComandoLCD(0b00000100);
   enviarComandoLCD(0b00000000);
 
-  for (i= 0; i < 40; i++) {
+  for (i= 0; i < 56; i++) {
     enviarDadoLCD(caracteresEspeciais[i]>>4);
     enviarDadoLCD(caracteresEspeciais[i]);
   }
@@ -158,24 +196,20 @@ void exibirAnimacao(void) {
 
   char caracteres[] = {
     0b00000000,
-    0b00000000,
-    0b00000000,
     0b00000001,
-    0b00000000,
     0b00000010,
-    0b00000000,
     0b00000011,
-    0b00000000,
     0b00000100,
+    0b00000101,
+    0b00000110,
+    0b00000111,
   };
 
-  for (i = 0; i < 10; i++) {
+  for (i = 0; i < 4; i++) {
+    enviarDadoLCD(caracteres[0]);
     enviarDadoLCD(caracteres[i]);
-    
-    if (i % 2 == 1) {
-      delayMs(150);
-      cursorPosicaoInicial();
-    }
+    delayMs(100);
+    cursorPosicaoInicial();
   }
 }
 
