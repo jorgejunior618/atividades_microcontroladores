@@ -167,7 +167,7 @@ unsigned char lerTeclado(void) {
 				MatCol3 = 1;
 				break;
 		}
-		if (i > 3) {}
+		if (i > 2) {}
 		else if(MatLinA == 0) {
 			while (MatLinA == 0) {}
 			return matriz_numeros_teclado[0][i];
