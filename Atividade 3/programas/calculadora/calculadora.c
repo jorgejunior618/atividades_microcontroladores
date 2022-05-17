@@ -23,8 +23,8 @@
 #define SAIDA_DISPLAY LATC
 #define SAIDA_VARREDURA LATA
 
-int operador1, operador2, operacao, valoresDisplay[6] = {-1,-1,-1,-1,-1,-1};
-char mostraResultado = 0, numeros_display[11] = {
+long operador1, operador2, operacao, valoresDisplay[6] = {-1,-1,-1,-1,-1,-1};
+char mostraResultado = 0, numeros_display[12] = {
   0b00000001,
   0b01001111,
   0b00010010,
@@ -36,6 +36,7 @@ char mostraResultado = 0, numeros_display[11] = {
   0b00000000,
   0b00000100,
   0b01111111,
+  0b00110000,
 };
 
 void inicializarAmbiente(void) {
@@ -67,7 +68,7 @@ void inicializarRelogio(void) {
 	SAIDA_VARREDURA = 0b00111111;
 }
 
-void realizaVarredura(void) {
+void realizaVarreduraDisplay(void) {
 /** Configura o display com o ultimo valor do horario atualizado
  * Realizando a varredura nos Seis displays
  */
@@ -80,7 +81,7 @@ void realizaVarredura(void) {
     valoresDisplay[2] == -1 ? 10 : valoresDisplay[2],
     valoresDisplay[3] == -1 ? 10 : valoresDisplay[3],
     valoresDisplay[4] == -1 ? 10 : valoresDisplay[4],
-    valoresDisplay[5] == -1 ? 10 : valoresDisplay[5],
+    valoresDisplay[5] == -1 ? 10 : valoresDisplay[5] == -2 ? 11 : valoresDisplay[5],
   };
 	
 	for (i = 0; i < 6; i++) {
@@ -103,7 +104,7 @@ char lerTeclado(void) {
 	};
 	
 	for (i = 0; i < 5; i++) {
-		realizaVarredura();
+		realizaVarreduraDisplay();
 
 		switch (i) {
 			case 0: 
@@ -144,28 +145,28 @@ char lerTeclado(void) {
 		if (i == 4) {}
 		else if(MatLinA == 0) {
 			while (MatLinA == 0) {
-				realizaVarredura();
+				realizaVarreduraDisplay();
 			}
 			mostraResultado = 0;
 			return matriz_numeros_teclado[0][i];
 		}
 		else if(MatLinB == 0) {
 			while (MatLinB == 0) {
-				realizaVarredura();
+				realizaVarreduraDisplay();
 			}
 			mostraResultado = 0;
 			return matriz_numeros_teclado[1][i];
 		}
 		else if(MatLinC == 0) {
 			while (MatLinC == 0) {
-				realizaVarredura();
+				realizaVarreduraDisplay();
 			}
 			mostraResultado = 0;
 			return matriz_numeros_teclado[2][i];
 		}
 		else if(MatLinD == 0) {
 			while (MatLinD == 0) {
-				realizaVarredura();
+				realizaVarreduraDisplay();
 			}
 			mostraResultado = 0;
 			return matriz_numeros_teclado[3][i];
@@ -180,20 +181,23 @@ void realizaCalculo(void) {
  */
 
 	char leitura, ultimaLeitura = 0, i;
-	int aux;
+	long aux;
 
 	while(1) {
 		if (mostraResultado == 0) {
 			aux = ultimaLeitura == 0 ? operador1 : operador2;
 
 			for (i = 5; i >= 0; i--) {
-				valoresDisplay[i] = aux == 0 ? -1 : aux % 10;
+				realizaVarreduraDisplay();
+				valoresDisplay[i] = aux == 0 && i != 5 ? -1 : aux % 10;
+				realizaVarreduraDisplay();
 				aux = aux / 10;
+				realizaVarreduraDisplay();
 			}
 		}
 
 		leitura = lerTeclado();
-		realizaVarredura();
+		realizaVarreduraDisplay();
 
 		if (leitura == 19) {}
 		else if (leitura == RESULT) {
@@ -214,6 +218,7 @@ void realizaCalculo(void) {
 		}
 	}
 
+	realizaVarreduraDisplay();
 	mostraResultado = 1;
 	switch (operacao) {
 		case SOMA:
@@ -240,12 +245,19 @@ void realizaCalculo(void) {
 	operador1 = 0;
 	operador2 = 0;
 
+	if (aux < 0 || aux > 999999) {
+		aux = -2;
+	}
+
 	for (i = 5; i >= 0; i--) {
-		valoresDisplay[i] = aux == 0 ? -1 : aux % 10;
+		realizaVarreduraDisplay();
+		valoresDisplay[i] = aux == 0 && i != 5 ? -1 : aux % 10;
+		realizaVarreduraDisplay();
 		aux = aux / 10;
+		realizaVarreduraDisplay();
 	}
 	// while (1) {
-	// 	realizaVarredura();
+	// 	realizaVarreduraDisplay();
 	// }
 }
 
@@ -255,7 +267,7 @@ void main(void) {
 	
 
 	while (1) {
-		// realizaVarredura();
+		// realizaVarreduraDisplay();
 		realizaCalculo();
 	}
 }
