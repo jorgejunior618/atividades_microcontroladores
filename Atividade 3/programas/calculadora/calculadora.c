@@ -177,7 +177,7 @@ char lerTeclado(void) {
 
 void realizaCalculo(void) {
 /** 
- *
+ * recebe os operadores do calculo e modifica a variavel do resultado para ser mostrado em tela
  */
 
 	char leitura, ultimaLeitura = 0, i;

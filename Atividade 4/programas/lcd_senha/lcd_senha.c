@@ -212,13 +212,17 @@ void avisarSenhaCorreta(void) {
 }
 
 unsigned char realizaLogin(void) {
+  /**
+   * Recebe a senha de 4 digitos do usuario
+   * retorna 1 caso a senha esteja correta e 0 caso contrario
+   */
   unsigned char leituraTeclado, cont = 0;
 
   while (cont < 4) {
     leituraTeclado = lerTeclado();
     if (leituraTeclado != 200) {
-      enviarDadoLCD(leituraTeclado>>4);
-      enviarDadoLCD(leituraTeclado);
+      enviarDadoLCD('*'>>4);
+      enviarDadoLCD('*');
       senhaDigitada[cont] = leituraTeclado;
       cont += 1;
     }

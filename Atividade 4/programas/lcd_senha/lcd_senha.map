@@ -1,23 +1,23 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Sun May 15 17:41:30 2022
+Linker Map File - Created Thu May 19 16:51:02 2022
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
                 ---------  ---------  ---------  ---------  ---------
                _entry_scn       code   0x000000    program   0x000006
                    .cinit    romdata   0x000006    program   0x00000e
-        .code_lcd_senha.o       code   0x000014    program   0x000848
-               _cinit_scn       code   0x00085c    program   0x00009e
-                    .code       code   0x0008fa    program   0x000020
-             _startup_scn       code   0x00091a    program   0x00001c
-           .code___init.o       code   0x000936    program   0x000002
-     .idata_lcd_senha.o_i    romdata   0x000938    program   0x000005
-     .romdata_lcd_senha.o    romdata   0x000938    program   0x000000
-         .romdata_c018i.o    romdata   0x000938    program   0x000000
-        .romdata___init.o    romdata   0x000938    program   0x000000
-        .idata___init.o_i    romdata   0x00093d    program   0x000000
-         .idata_c018i.o_i    romdata   0x00093d    program   0x000000
-            .code_c018i.o       code   0x00093e    program   0x000000
+        .code_lcd_senha.o       code   0x000014    program   0x000846
+               _cinit_scn       code   0x00085a    program   0x00009e
+                    .code       code   0x0008f8    program   0x000020
+             _startup_scn       code   0x000918    program   0x00001c
+           .code___init.o       code   0x000934    program   0x000002
+     .idata_lcd_senha.o_i    romdata   0x000936    program   0x000005
+     .romdata_lcd_senha.o    romdata   0x000936    program   0x000000
+         .romdata_c018i.o    romdata   0x000936    program   0x000000
+        .romdata___init.o    romdata   0x000936    program   0x000000
+        .idata___init.o_i    romdata   0x00093b    program   0x000000
+         .idata_c018i.o_i    romdata   0x00093b    program   0x000000
+            .code_c018i.o       code   0x00093c    program   0x000000
 .config_300001_lcd_senha.o    romdata   0x300001    program   0x000001
 .config_300003_lcd_senha.o    romdata   0x300003    program   0x000001
 .config_300005_lcd_senha.o    romdata   0x300005    program   0x000001
@@ -37,11 +37,11 @@ Linker Map File - Created Sun May 15 17:41:30 2022
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x00093c      
+                            0x000000    0x00093a      
                             0x300001    0x300001      
                             0x300003    0x300003      
                             0x300005    0x300005      
-            2368 out of 33048 program addresses used, program memory utilization is 7%
+            2366 out of 33048 program addresses used, program memory utilization is 7%
 
 
 
@@ -49,41 +49,41 @@ Linker Map File - Created Sun May 15 17:41:30 2022
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x000934    program     static                          
-       ___return_lbl00002   0x0008f8    program     static                          
-               __config_0   0x300001    program     static D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-               __config_1   0x300003    program     static D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-               __config_2   0x300005    program     static D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-                   __init   0x000936    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-            __zero_memory   0x0008fa    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                _do_cinit   0x00085c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+       ___return_lbl00001   0x000932    program     static                          
+       ___return_lbl00002   0x0008f6    program     static                          
+               __config_0   0x300001    program     static D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+               __config_1   0x300003    program     static D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+               __config_2   0x300005    program     static D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+                   __init   0x000934    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
+            __zero_memory   0x0008f8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                _do_cinit   0x00085a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 _startup   0x00091a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-       avisarSenhaCorreta   0x0006a8    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-     avisarSenhaIncorreta   0x00050e    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-                compare_l   0x000910    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                copy_loop   0x0008ce    program     static                          
-            copy_one_byte   0x0008d4    program     static                          
-          delayInicialLCD   0x0000b8    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-                  delayMs   0x000030    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-                     done   0x0008f8    program     static                          
-             done_copying   0x0008e2    program     static                          
-         enviarComandoLCD   0x000110    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-            enviarDadoLCD   0x00012a    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-               exibirNome   0x0001be    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-      inicializarAmbiente   0x000014    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-           inicializarLCD   0x000154    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-               lerTeclado   0x000242    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-             limpaDisplay   0x000144    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-                     loop   0x00092a    program     static                          
-                   loop_h   0x000908    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_l   0x000912    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                     main   0x00082e    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-               pedirSenha   0x0003d8    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-              pulsoEnable   0x0000fe    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-             realizaLogin   0x000770    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-                     test   0x000876    program     static                          
-               zero_block   0x000908    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                 _startup   0x000918    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+       avisarSenhaCorreta   0x0006a8    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+     avisarSenhaIncorreta   0x00050e    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+                compare_l   0x00090e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                copy_loop   0x0008cc    program     static                          
+            copy_one_byte   0x0008d2    program     static                          
+          delayInicialLCD   0x0000b8    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+                  delayMs   0x000030    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+                     done   0x0008f6    program     static                          
+             done_copying   0x0008e0    program     static                          
+         enviarComandoLCD   0x000110    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+            enviarDadoLCD   0x00012a    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+               exibirNome   0x0001be    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+      inicializarAmbiente   0x000014    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+           inicializarLCD   0x000154    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+               lerTeclado   0x000242    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+             limpaDisplay   0x000144    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+                     loop   0x000928    program     static                          
+                   loop_h   0x000906    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_l   0x000910    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                     main   0x00082c    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+               pedirSenha   0x0003d8    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+              pulsoEnable   0x0000fe    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+             realizaLogin   0x000770    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+                     test   0x000874    program     static                          
+               zero_block   0x000906    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
@@ -276,14 +276,14 @@ Linker Map File - Created Sun May 15 17:41:30 2022
                      WREG   0x000fe8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                 __FPFLAGS   0x000005       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
             __FPFLAGSbits   0x000005       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
-                  __tmp_0   0x000000       data     static D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
+                  __tmp_0   0x000000       data     static D:\Atividade 4\programas\lcd_senha\lcd_senha.c
                 curr_byte   0x000083       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                curr_entry   0x000085       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                  data_ptr   0x000087       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                   logado   0x00008a       data     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
+                   logado   0x00008a       data     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
                      prom   0x000080       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-            senhaDigitada   0x00008f       data     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-               senhaSalva   0x00008b       data     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
+            senhaDigitada   0x00008f       data     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+               senhaSalva   0x00008b       data     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
 
 
 
@@ -292,41 +292,41 @@ Linker Map File - Created Sun May 15 17:41:30 2022
                 ---------  ---------  ---------  --------- ---------                
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
        ___return_lbl00000   0x000004    program     static                          
-      inicializarAmbiente   0x000014    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-                  delayMs   0x000030    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-          delayInicialLCD   0x0000b8    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-              pulsoEnable   0x0000fe    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-         enviarComandoLCD   0x000110    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-            enviarDadoLCD   0x00012a    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-             limpaDisplay   0x000144    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-           inicializarLCD   0x000154    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-               exibirNome   0x0001be    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-               lerTeclado   0x000242    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-               pedirSenha   0x0003d8    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-     avisarSenhaIncorreta   0x00050e    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-       avisarSenhaCorreta   0x0006a8    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-             realizaLogin   0x000770    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-                     main   0x00082e    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-                _do_cinit   0x00085c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x000876    program     static                          
-                copy_loop   0x0008ce    program     static                          
-            copy_one_byte   0x0008d4    program     static                          
-             done_copying   0x0008e2    program     static                          
-                     done   0x0008f8    program     static                          
-       ___return_lbl00002   0x0008f8    program     static                          
-            __zero_memory   0x0008fa    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_h   0x000908    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-               zero_block   0x000908    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                compare_l   0x000910    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_l   0x000912    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                 _startup   0x00091a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x00092a    program     static                          
-       ___return_lbl00001   0x000934    program     static                          
-                   __init   0x000936    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-               __config_0   0x300001    program     static D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-               __config_1   0x300003    program     static D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-               __config_2   0x300005    program     static D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-                  __tmp_0   0x000000       data     static D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
+      inicializarAmbiente   0x000014    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+                  delayMs   0x000030    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+          delayInicialLCD   0x0000b8    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+              pulsoEnable   0x0000fe    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+         enviarComandoLCD   0x000110    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+            enviarDadoLCD   0x00012a    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+             limpaDisplay   0x000144    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+           inicializarLCD   0x000154    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+               exibirNome   0x0001be    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+               lerTeclado   0x000242    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+               pedirSenha   0x0003d8    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+     avisarSenhaIncorreta   0x00050e    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+       avisarSenhaCorreta   0x0006a8    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+             realizaLogin   0x000770    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+                     main   0x00082c    program     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+                _do_cinit   0x00085a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x000874    program     static                          
+                copy_loop   0x0008cc    program     static                          
+            copy_one_byte   0x0008d2    program     static                          
+             done_copying   0x0008e0    program     static                          
+                     done   0x0008f6    program     static                          
+       ___return_lbl00002   0x0008f6    program     static                          
+            __zero_memory   0x0008f8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_h   0x000906    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+               zero_block   0x000906    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                compare_l   0x00090e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_l   0x000910    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                 _startup   0x000918    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x000928    program     static                          
+       ___return_lbl00001   0x000932    program     static                          
+                   __init   0x000934    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
+               __config_0   0x300001    program     static D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+               __config_1   0x300003    program     static D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+               __config_2   0x300005    program     static D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+                  __tmp_0   0x000000       data     static D:\Atividade 4\programas\lcd_senha\lcd_senha.c
                      SIGN   0x000004       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
             __FPFLAGSbits   0x000005       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
                 __FPFLAGS   0x000005       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
@@ -334,9 +334,9 @@ Linker Map File - Created Sun May 15 17:41:30 2022
                 curr_byte   0x000083       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                curr_entry   0x000085       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                  data_ptr   0x000087       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                   logado   0x00008a       data     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-               senhaSalva   0x00008b       data     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
-            senhaDigitada   0x00008f       data     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 4\programas\lcd_senha\lcd_senha.c
+                   logado   0x00008a       data     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+               senhaSalva   0x00008b       data     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
+            senhaDigitada   0x00008f       data     extern D:\Atividade 4\programas\lcd_senha\lcd_senha.c
                 PORTAbits   0x000f80       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                     PORTA   0x000f80       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                     PORTB   0x000f81       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
