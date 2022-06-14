@@ -14,6 +14,7 @@
 #define ENTRADA 1
 
 void tratamentoTimer(void);
+char inicializado = 0;
 
 #pragma code enderecoIntTimer = 0x08
 
@@ -27,9 +28,12 @@ void interrupcaoTimer(void) {
 void tratamentoTimer(void) {
     if (RegTimerFlag == 1) {
         RegTimerFlag = 0;
-        TMR0H = 0x0B;
-        TMR0L = 0xDC;
-        
+        TMR0H = 0xf8;
+        TMR0L = 0x44;
+        if (inicializado == 1)
+        {
+            enviarDadoLCD('b');
+        }
     }
     if (RegIntFlag == 1) {
         // while(ODOMERTO == 1) {}
@@ -67,6 +71,8 @@ void main(void) {
     inicializaInterrupcoes();
     inicializaTimer();
     inicializarLCD();
+
+    inicializado = 1;
 
     while (1) {}
 }
