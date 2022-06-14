@@ -50,17 +50,12 @@ void inicializaInterrupcoes(void) {
 }
 
 void inicializaTimer(void) {
-    T0CONbits.TMR0ON    = 0; // Ativa o timer
+    T0CONbits.TMR0ON    = 1; // Ativa o timer
     T0CONbits.T08BIT    = 0; // Ativa o modo 16 bits
     T0CONbits.T0CS      = 0; // Relaciona o timer ao clock interno
-    T0CONbits.PSA       = 0; // Ativa o Prescaler
-    // Divisao do prescaler
-    T0CONbits.T0PS0     = 0;
-    T0CONbits.T0PS1     = 0;
-    T0CONbits.T0PS2     = 1;
-    TMR0H = 0x0B;
-    TMR0L = 0xDC;
-    // LED = 0;
+    T0CONbits.PSA       = 1; // Ativa o Prescaler
+    TMR0H = 0xf8;
+    TMR0L = 0x44;
 }
 
 void main(void) {
