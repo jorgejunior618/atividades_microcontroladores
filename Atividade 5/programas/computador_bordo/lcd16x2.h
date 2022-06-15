@@ -23,8 +23,10 @@ void delayInicialLCD(void) {
 
 void pulsoEnable(void) {
     // Realiza um pulso no Enable do LCD para receber a informação no barramento de dados
+    int i;
     ENABLE = 1;
     ENABLE = 0;
+    // for (i = 0; i < 50; i++) {}
 }
 
 void enviarComandoLCD(unsigned char comando) {
@@ -45,6 +47,7 @@ void enviarDadoLCD(unsigned char dado) {
 
 void limpaDisplay(void) {
     // Limpa todos os caracteres que estejam no display
+    enviarComandoLCD(0b00000001);
 }
 
 void inicializarLCD(void) {
@@ -55,7 +58,7 @@ void inicializarLCD(void) {
     delayInstrucaoLCD(2);
 
     // Define o LCD ligado e cursor
-    enviarComandoLCD(0b00001110);
+    enviarComandoLCD(0b00001100);
     delayInstrucaoLCD(2);
 
     // Limpa o display
