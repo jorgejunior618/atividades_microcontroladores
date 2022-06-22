@@ -50,7 +50,7 @@ void tratamentoInterrupcao(void) {
         milisegundosDecorridos += 1;
     }
     if (RegOdometroFlag == 1) {
-        // while(ODOMERTO == 1) {}
+        quilometragemNum += 3;
         RegOdometroFlag = 0;
     }
     if (RegRotacaoFlag == 1) {
@@ -61,7 +61,6 @@ void tratamentoInterrupcao(void) {
             milisegundosMostrar = milisegundosDecorridos;
             milisegundosDecorridos = 0;
             T0CONbits.TMR0ON = 0;
-            quilometragemNum += 3;
         } else {
             T0CONbits.TMR0ON = 1;
             contando = 1;

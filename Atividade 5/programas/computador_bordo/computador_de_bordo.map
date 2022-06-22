@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Tue Jun 14 23:10:38 2022
+Linker Map File - Created Wed Jun 22 00:14:32 2022
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -8,24 +8,24 @@ Linker Map File - Created Tue Jun 14 23:10:38 2022
            .code___init.o       code   0x000006    program   0x000002
       enderecoInterrupcao       code   0x000008    program   0x000006
                    .cinit    romdata   0x00000e    program   0x00000e
-       .code_computador.o       code   0x00001c    program   0x000974
-               _cinit_scn       code   0x000990    program   0x00009e
-                     PROG       code   0x000a2e    program   0x000096
-         .code_fxd2424u.o       code   0x000ac4    program   0x00003a
-         .code_fxd1616u.o       code   0x000afe    program   0x00002c
-                    .code       code   0x000b2a    program   0x000020
-             _startup_scn       code   0x000b4a    program   0x00001c
-    .romdata_computador.o    romdata   0x000b66    program   0x000000
-      .idata_fxd1616u.o_i    romdata   0x000b66    program   0x000000
-      .romdata_fxd1616u.o    romdata   0x000b66    program   0x000000
-    .idata_computador.o_i    romdata   0x000b66    program   0x000016
-      .idata_fxd2424u.o_i    romdata   0x000b66    program   0x000000
-      .romdata_fxd2424u.o    romdata   0x000b66    program   0x000000
-        .romdata___init.o    romdata   0x000b66    program   0x000000
-         .romdata_c018i.o    romdata   0x000b66    program   0x000000
-            .code_c018i.o       code   0x000b7c    program   0x000000
-        .idata___init.o_i    romdata   0x000b7c    program   0x000000
-         .idata_c018i.o_i    romdata   0x000b7c    program   0x000000
+       .code_computador.o       code   0x00001c    program   0x000978
+               _cinit_scn       code   0x000994    program   0x00009e
+                     PROG       code   0x000a32    program   0x000096
+         .code_fxd2424u.o       code   0x000ac8    program   0x00003a
+         .code_fxd1616u.o       code   0x000b02    program   0x00002c
+                    .code       code   0x000b2e    program   0x000020
+             _startup_scn       code   0x000b4e    program   0x00001c
+    .romdata_computador.o    romdata   0x000b6a    program   0x000000
+      .idata_fxd1616u.o_i    romdata   0x000b6a    program   0x000000
+      .romdata_fxd1616u.o    romdata   0x000b6a    program   0x000000
+    .idata_computador.o_i    romdata   0x000b6a    program   0x000016
+      .idata_fxd2424u.o_i    romdata   0x000b6a    program   0x000000
+      .romdata_fxd2424u.o    romdata   0x000b6a    program   0x000000
+        .romdata___init.o    romdata   0x000b6a    program   0x000000
+         .romdata_c018i.o    romdata   0x000b6a    program   0x000000
+            .code_c018i.o       code   0x000b80    program   0x000000
+        .idata___init.o_i    romdata   0x000b80    program   0x000000
+         .idata_c018i.o_i    romdata   0x000b80    program   0x000000
 .config_300003_computador.o    romdata   0x300003    program   0x000001
 .config_300005_computador.o    romdata   0x300005    program   0x000001
                 MATH_DATA      udata   0x000000       data   0x000014
@@ -48,71 +48,71 @@ Linker Map File - Created Tue Jun 14 23:10:38 2022
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x000b7b      
+                            0x000000    0x000b7f      
                             0x300003    0x300003      
                             0x300005    0x300005      
-            2942 out of 33048 program addresses used, program memory utilization is 8%
+            2946 out of 33048 program addresses used, program memory utilization is 8%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                   D2424S   0x000a58    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                D2424SNEG   0x000a66    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                 D2424SOK   0x000a62    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                  D2424SX   0x000a7e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                  DA2424S   0x000a44    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                 FXD1616U   0x000afe    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-                 FXD2424S   0x000a2e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                 FXD2424U   0x000ac4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424u.c
-                 FXM1616U   0x000a88    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616u.asm
+                   D2424S   0x000a5c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                D2424SNEG   0x000a6a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                 D2424SOK   0x000a66    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                  D2424SX   0x000a82    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                  DA2424S   0x000a48    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                 FXD1616U   0x000b02    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
+                 FXD2424S   0x000a32    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                 FXD2424U   0x000ac8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424u.c
+                 FXM1616U   0x000a8c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616u.asm
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00000   0x000afc    program     static                          
-       ___return_lbl00000   0x000b28    program     static                          
-       ___return_lbl00001   0x000b64    program     static                          
-       ___return_lbl00002   0x000a2c    program     static                          
+       ___return_lbl00000   0x000b00    program     static                          
+       ___return_lbl00000   0x000b2c    program     static                          
+       ___return_lbl00001   0x000b68    program     static                          
+       ___return_lbl00002   0x000a30    program     static                          
        ___return_lbl00016   0x00000c    program     static                          
                __config_0   0x300003    program     static D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
                __config_1   0x300005    program     static D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
                    __init   0x000006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-            __zero_memory   0x000b2a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                _do_cinit   0x000990    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+            __zero_memory   0x000b2e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                _do_cinit   0x000994    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                   _false   0x000af8    program     static                          
-                 _startup   0x000b4a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-     calculaQuilometragem   0x000564    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-           calculaRotacao   0x000416    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-        calculaVelocidade   0x0002e4    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-                compare_l   0x000b40    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                copy_loop   0x000a02    program     static                          
-            copy_one_byte   0x000a08    program     static                          
+                   _false   0x000afc    program     static                          
+                 _startup   0x000b4e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+     calculaQuilometragem   0x000568    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+           calculaRotacao   0x00041a    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+        calculaVelocidade   0x0002e8    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+                compare_l   0x000b44    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                copy_loop   0x000a06    program     static                          
+            copy_one_byte   0x000a0c    program     static                          
           delayInicialLCD   0x0000a4    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\LCD16X2.h
         delayInstrucaoLCD   0x00001c    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\LCD16X2.h
-                     done   0x000a2c    program     static                          
-             done_copying   0x000a16    program     static                          
-                  endloop   0x000b24    program     static                          
+                     done   0x000a30    program     static                          
+             done_copying   0x000a1a    program     static                          
+                  endloop   0x000b28    program     static                          
          enviarComandoLCD   0x00010c    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\LCD16X2.h
             enviarDadoLCD   0x000126    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\LCD16X2.h
-   inicializaInterrupcoes   0x0001f6    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-          inicializaTimer   0x00020c    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-inicializarComputadorDeBordo   0x00021a    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+   inicializaInterrupcoes   0x0001fa    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+          inicializaTimer   0x000210    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+inicializarComputadorDeBordo   0x00021e    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
            inicializarLCD   0x00014a    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\LCD16X2.h
          interrupcaoTimer   0x000008    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
              limpaDisplay   0x000140    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\LCD16X2.h
-                     loop   0x000ad0    program     static                          
-                     loop   0x000b08    program     static                          
-                     loop   0x000b5a    program     static                          
-                   loop_h   0x000b38    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_l   0x000b42    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                     main   0x000966    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-      mostraQuilometragem   0x00090e    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-            mostraRotacao   0x0008ba    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-         mostraVelocidade   0x000866    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+                     loop   0x000ad4    program     static                          
+                     loop   0x000b0c    program     static                          
+                     loop   0x000b5e    program     static                          
+                   loop_h   0x000b3c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_l   0x000b46    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                     main   0x00096a    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+      mostraQuilometragem   0x000912    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+            mostraRotacao   0x0008be    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+         mostraVelocidade   0x00086a    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
               pulsoEnable   0x0000ea    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\LCD16X2.h
-                     test   0x0009aa    program     static                          
+                     test   0x0009ae    program     static                          
     tratamentoInterrupcao   0x00019e    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-               zero_block   0x000b38    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+               zero_block   0x000b3c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
@@ -361,46 +361,46 @@ inicializarComputadorDeBordo   0x00021a    program     extern D:\pessoais\IFCE\A
              limpaDisplay   0x000140    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\LCD16X2.h
            inicializarLCD   0x00014a    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\LCD16X2.h
     tratamentoInterrupcao   0x00019e    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-   inicializaInterrupcoes   0x0001f6    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-          inicializaTimer   0x00020c    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-inicializarComputadorDeBordo   0x00021a    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-        calculaVelocidade   0x0002e4    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-           calculaRotacao   0x000416    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-     calculaQuilometragem   0x000564    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-         mostraVelocidade   0x000866    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-            mostraRotacao   0x0008ba    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-      mostraQuilometragem   0x00090e    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-                     main   0x000966    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
-                _do_cinit   0x000990    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x0009aa    program     static                          
-                copy_loop   0x000a02    program     static                          
-            copy_one_byte   0x000a08    program     static                          
-             done_copying   0x000a16    program     static                          
-       ___return_lbl00002   0x000a2c    program     static                          
-                     done   0x000a2c    program     static                          
-                 FXD2424S   0x000a2e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                  DA2424S   0x000a44    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                   D2424S   0x000a58    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                 D2424SOK   0x000a62    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                D2424SNEG   0x000a66    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                  D2424SX   0x000a7e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                 FXM1616U   0x000a88    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616u.asm
-                 FXD2424U   0x000ac4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424u.c
-                     loop   0x000ad0    program     static                          
-                   _false   0x000af8    program     static                          
-       ___return_lbl00000   0x000afc    program     static                          
-                 FXD1616U   0x000afe    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-                     loop   0x000b08    program     static                          
-                  endloop   0x000b24    program     static                          
-       ___return_lbl00000   0x000b28    program     static                          
-            __zero_memory   0x000b2a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-               zero_block   0x000b38    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_h   0x000b38    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                compare_l   0x000b40    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                   loop_l   0x000b42    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
-                 _startup   0x000b4a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x000b5a    program     static                          
-       ___return_lbl00001   0x000b64    program     static                          
+   inicializaInterrupcoes   0x0001fa    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+          inicializaTimer   0x000210    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+inicializarComputadorDeBordo   0x00021e    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+        calculaVelocidade   0x0002e8    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+           calculaRotacao   0x00041a    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+     calculaQuilometragem   0x000568    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+         mostraVelocidade   0x00086a    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+            mostraRotacao   0x0008be    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+      mostraQuilometragem   0x000912    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+                     main   0x00096a    program     extern D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
+                _do_cinit   0x000994    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x0009ae    program     static                          
+                copy_loop   0x000a06    program     static                          
+            copy_one_byte   0x000a0c    program     static                          
+             done_copying   0x000a1a    program     static                          
+       ___return_lbl00002   0x000a30    program     static                          
+                     done   0x000a30    program     static                          
+                 FXD2424S   0x000a32    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                  DA2424S   0x000a48    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                   D2424S   0x000a5c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                 D2424SOK   0x000a66    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                D2424SNEG   0x000a6a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                  D2424SX   0x000a82    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                 FXM1616U   0x000a8c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616u.asm
+                 FXD2424U   0x000ac8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424u.c
+                     loop   0x000ad4    program     static                          
+                   _false   0x000afc    program     static                          
+       ___return_lbl00000   0x000b00    program     static                          
+                 FXD1616U   0x000b02    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
+                     loop   0x000b0c    program     static                          
+                  endloop   0x000b28    program     static                          
+       ___return_lbl00000   0x000b2c    program     static                          
+            __zero_memory   0x000b2e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+               zero_block   0x000b3c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_h   0x000b3c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                compare_l   0x000b44    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                   loop_l   0x000b46    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4520.asm
+                 _startup   0x000b4e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x000b5e    program     static                          
+       ___return_lbl00001   0x000b68    program     static                          
                __config_0   0x300003    program     static D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
                __config_1   0x300005    program     static D:\pessoais\IFCE\Aulas Online\4º Semestre\MCMP\Atividade 5\programas\computador_bordo\computador.c
                      SIGN   0x000000       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
